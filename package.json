@@ -1,0 +1,32 @@
+{
+  "name": "baby-connect-nightmare",
+  "version": "0.0.1",
+  "description": "REST API wrapper around Baby Connect app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpchip/baby-connect-nightmare.git"
+  },
+  "keywords": [
+    "Baby",
+    "Connect",
+    "API",
+    "REST",
+    "nightmare",
+    "fragile"
+  ],
+  "author": "Jared Chapiewsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpchip/baby-connect-nightmare/issues"
+  },
+  "homepage": "https://github.com/jpchip/baby-connect-nightmare#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nightmare": "^2.5.2",
+    "promise": "^7.1.1"
+  }
+}
