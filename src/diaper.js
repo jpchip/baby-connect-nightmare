@@ -11,7 +11,7 @@ var Promise = require("promise");
  */
 module.exports = function (email, password, kidId, type) {
 	return new Promise(function (fulfill, reject){
-		var babyConnect = new Nightmare({show: true})
+		var babyConnect = new Nightmare()
 			.goto("https://www.baby-connect.com/login")
 			.wait()
 			.type("#email", email)
