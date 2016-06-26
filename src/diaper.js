@@ -20,7 +20,7 @@ module.exports = function (email, password, kidId, type) {
 			.wait(100)
 			.click("#save")
 			.wait()
-			.wait(500)
+			.wait(2000)
 			.click("#" + kidId)
 			.wait(500)
 			.click("a[href='javascript:showDiaperDlg()']")
@@ -39,6 +39,7 @@ module.exports = function (email, password, kidId, type) {
 		}
 
 		babyConnect
+			.wait(100)
 			.click(".defaultDlgButton")
 			.wait(500)
 			.run(function(err, nightmare) {

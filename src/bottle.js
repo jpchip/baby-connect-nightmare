@@ -21,7 +21,7 @@ module.exports = function (email, password, kidId, type, quantity) {
 			.wait(100)
 			.click("#save")
 			.wait()
-			.wait(500)
+			.wait(2000)
 			.click("#" + kidId)
 			.wait(500)
 			.click("a[href='javascript:showBibDlg()']")
@@ -40,6 +40,7 @@ module.exports = function (email, password, kidId, type, quantity) {
 		}
 
 		babyConnect
+			.wait(100)
 			.click(".defaultDlgButton")
 			.wait(500)
 			.run(function(err, nightmare) {
