@@ -1,4 +1,4 @@
-var Nightmare = require('nightmare');
+var Nightmare = require("nightmare");
 var Promise = require("promise");
 
 /**
@@ -13,39 +13,39 @@ var Promise = require("promise");
 module.exports = function (email, password, kidId, type, quantity) {
 	return new Promise(function (fulfill, reject){
 		var babyConnect = new Nightmare()
-			.goto('https://www.baby-connect.com/login')
+			.goto("https://www.baby-connect.com/login")
 			.wait()
-			.type('#email', email)
-			.type('#pass', password)
-			.click('#save')
+			.type("#email", email)
+			.type("#pass", password)
+			.click("#save")
 			.wait()
 			.wait(1000)
-			.click('#' + kidId)
+			.click("#" + kidId)
 			.wait(500)
 			.click("a[href='javascript:showBibDlg()']")
 			.wait(500);
 
 		switch(type) {
-			case 'milk':
-				babyConnect = babyConnect.click('#bibMilk');
-				break;
-			case 'formula':
-				babyConnect = babyConnect.click('#bibFormula');
-				break;
-			default:
-				reject('Unknown type');
-				return;
+		case "milk":
+			babyConnect = babyConnect.click("#bibMilk");
+			break;
+		case "formula":
+			babyConnect = babyConnect.click("#bibFormula");
+			break;
+		default:
+			reject("Unknown type");
+			return;
 		}
 
 		babyConnect
-			.click('.defaultDlgButton')
+			.click(".defaultDlgButton")
 			.wait(500)
 			.run(function(err, nightmare) {
-			if (err) {
-				reject(err);
-			} else {
-				fulfill(nightmare);
-			}
-		});
+				if (err) {
+					reject(err);
+				} else {
+					fulfill(nightmare);
+				}
+			});
 	});
 };
