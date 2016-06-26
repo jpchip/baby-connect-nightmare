@@ -11,7 +11,7 @@ var Promise = require("promise");
  */
 module.exports = function (email, password, kidId, type) {
 	return new Promise(function (fulfill, reject){
-		var babyConnect = new Nightmare()
+		var babyConnect = new Nightmare({show: true})
 			.goto("https://www.baby-connect.com/login")
 			.wait()
 			.type("#email", email)
@@ -21,7 +21,7 @@ module.exports = function (email, password, kidId, type) {
 			.click("#save")
 			.wait()
 			.wait(2000)
-			.click("#" + kidId)
+			.click("#" + kidId + "> a")
 			.wait(500)
 			.click("a[href='javascript:showDiaperDlg()']")
 			.wait(500);

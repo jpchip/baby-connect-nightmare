@@ -22,7 +22,7 @@ module.exports = function (email, password, kidId, type, quantity) {
 			.click("#save")
 			.wait()
 			.wait(2000)
-			.click("#" + kidId)
+			.click("#" + kidId + "> a")
 			.wait(500)
 			.click("a[href='javascript:showBibDlg()']")
 			.wait(500);
