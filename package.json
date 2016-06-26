@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/jpchip/baby-connect-nightmare#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "nightmare": "^2.5.2",
     "promise": "^7.1.1"
