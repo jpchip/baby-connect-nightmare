@@ -19,7 +19,7 @@ module.exports = function (email, password, kidId, type) {
 			.type("#pass", password)
 			.wait(100)
 			.click("#save")
-			.wait("#" + kidId)
+			.wait(5000)
 			.click("#" + kidId + "> a")
 			.wait(500)
 			.click("a[href='javascript:showDiaperDlg()']")
@@ -35,18 +35,17 @@ module.exports = function (email, password, kidId, type) {
 		case "wet":
 			babyConnect = babyConnect.click("#diaper3");
 			break;
+			default:
+				reject("Unknown type");
+				return;
 		}
 
 		babyConnect
-			.wait(100)
-			.click(".defaultDlgButton")
-			.wait(500)
-			.run(function(err, nightmare) {
-				if (err) {
-					reject(err);
-				} else {
-					fulfill(nightmare);
-				}
-			});
+		.wait(100)
+		.click(".defaultDlgButton")
+		.wait(500)
+		.end();
+
+		fulfill(babyConnect);
 	});
 };

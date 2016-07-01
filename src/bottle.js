@@ -20,7 +20,7 @@ module.exports = function (email, password, kidId, type, quantity) {
 			.type("#pass", password)
 			.wait(100)
 			.click("#save")
-			.wait("#" + kidId)
+			.wait(5000)
 			.click("#" + kidId + "> a")
 			.wait(500)
 			.click("a[href='javascript:showBibDlg()']")
@@ -42,12 +42,8 @@ module.exports = function (email, password, kidId, type, quantity) {
 			.wait(100)
 			.click(".defaultDlgButton")
 			.wait(500)
-			.run(function(err, nightmare) {
-				if (err) {
-					reject(err);
-				} else {
-					fulfill(nightmare);
-				}
-			});
+			.end();
+
+		fulfill(babyConnect);
 	});
 };
