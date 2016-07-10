@@ -20,6 +20,8 @@ baby connect site changes. **So use at your own risk!**
 Since you are passing email and password in the POSTs, you'll probably want
 to make sure your site uses SSL.
 
+Before you begin, you will need to get the ID of your child out of the 
+
 ## Development
 
 Check out the repo and run:
@@ -39,6 +41,21 @@ The API should then be available at `http://localhost:3000`.
 If something goes wrong with nightmare.js, it will return a `500` status and the error, like:
 
 `{ "error" : "This thing went wrong" }`
+
+### KIDS
+
+Gets list of kids in your account with their ids, to be used in other requests.
+
+`GET /kids?email=something@something.com&password=password`
+
+Example Response:
+```
+[{
+	"id": "kid124567890",
+	"name": "Bob"
+}]
+```
+
 
 ### DIAPER
 

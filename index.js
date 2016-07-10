@@ -3,8 +3,17 @@ var bodyParser = require("body-parser");
 var app = express();
 var diaper = require("./src/diaper");
 var bottle = require("./src/bottle");
+var kids = require("./src/kids");
 
 app.use(bodyParser.json());
+
+app.get("/kids", function (req, res) {
+	kids(req.query.email, req.query.password).then(function(kids) {
+		res.status(200).json(kids);
+	}).catch(function (error) {
+		res.status(500).json({ error: error });
+	});
+});
 
 app.post("/diaper", function (req, res) {
 	if (!req.body)  {
