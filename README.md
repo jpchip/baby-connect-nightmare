@@ -7,20 +7,18 @@ REST API Wrapper around some Baby Connect functionality using nightmare.js.
 I love the [Baby Connect](https://www.baby-connect.com) app. I wanted a 
 way to use it from my Pebble, but unfortunately they don't offer an API. 
 So I decided to make my own! All it does it provide a few simple commands, 
-all triggered via commands run via nightmare.js and PhantomJS. 
+all triggered via commands run via [nightmare.js](http://www.nightmarejs.org/). 
 
 ## Usage
 
 You'll need to deploy this somewhere to use it. There are lots of 
-places to deploy a node.js app for cheap.
+places to deploy a node.js app for cheap (note: I found that some places had trouble running nightmarejs).
 
 Because this isn't a real API, it is fragile and could break anytime the 
 baby connect site changes. **So use at your own risk!**
 
-Since you are passing email and password in the POSTs, you'll probably want
+Since you are passing email and password in the requests, you'll probably want
 to make sure your site uses SSL.
-
-Before you begin, you will need to get the ID of your child out of the 
 
 ## Development
 
@@ -55,7 +53,6 @@ Example Response:
 	"name": "Bob"
 }]
 ```
-
 
 ### DIAPER
 
